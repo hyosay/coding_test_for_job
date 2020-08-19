@@ -26,33 +26,9 @@ dfs(graph,1, visited)
 '''
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def dfs(graph, node, stack):
-
     stack[node] = True
-    print(node, end= ' ')
+    print(node, end=" ")
     for i in graph[node]:
         if not stack[i]:
             dfs(graph, i, stack)
@@ -71,4 +47,4 @@ graph = [
 ]
 
 stack = [False] * 9
-dfs(graph, 1, stack)
+dfs(graph, 2, stack)
