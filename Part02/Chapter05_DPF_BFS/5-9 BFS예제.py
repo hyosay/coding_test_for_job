@@ -1,5 +1,5 @@
 from collections import deque
-
+'''
 def dfs(graph, start, visited):
     queue = deque([start])
     visited[start] = True
@@ -9,7 +9,44 @@ def dfs(graph, start, visited):
         for i in graph[v]:
             if not visited[i]:
                 queue.append(i)
+                visited[i] = True'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def dfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    while queue:
+        v = queue.popleft()
+        print(v, end= " ")
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
                 visited[i] = True
+
+
 
 
 
@@ -27,4 +64,5 @@ graph = [
 
 visited = [False] * 9
 dfs(graph, 1, visited)
+
 
