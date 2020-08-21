@@ -26,12 +26,16 @@ dfs(graph,1, visited)
 '''
 
 
-def dfs(graph, node, stack):
-    stack[node] = True
-    print(node, end= ' ')
-    for i in graph[node]:
-        if not stack[i]:
-            dfs(graph, i, stack)
+
+
+def dfs(graph, v, visited):
+
+    visited[v] = True
+    print(v, end=' ')
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
 
 
 graph = [

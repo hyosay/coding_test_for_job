@@ -4,4 +4,6 @@ array = [[0, 0],
 if array[0][0] == False:
     array[0][0] = True
 print(array[0][0], bool(array[0][0]))
-print(array)
+array[0][0] = 1
+print(array[0][0])
+print(bool(array[0][0]))
