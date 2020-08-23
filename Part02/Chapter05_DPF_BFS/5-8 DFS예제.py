@@ -7,6 +7,7 @@
     for i in graph[v]:
         if not visited[i]:
             dfs(graph, i , visited)
+'''
 graph = [
     [],
     [2, 3, 8],
@@ -18,37 +19,47 @@ graph = [
     [2, 6, 8],
     [1, 7]
 ]
-
+'''
 visited = [False] * 9
 
 dfs(graph,1, visited)
-
 '''
 
 
 
+'''
 
-def dfs(graph, v, visited):
+graph = {
+    1: [2, 3, 4],
+    2: [5],
+    3: [5],
+    4: [],
+    5: [6, 7],
+    6: [],
+    7: [3]
+}
 
-    visited[v] = True
-    print(v, end=' ')
+def recursive_dfs(v, discovered=[]):
+    discovered.append(v)
     for i in graph[v]:
-        if not visited[i]:
-            dfs(graph, i, visited)
+        if not i in discovered:
+            discovered = recursive_dfs(i, discovered)
+    return discovered
+
+print(recursive_dfs(1))
+
+
+'''
+def dfs(v):
+    print(v, end= ' ')
+    visited[v] = 1
+    for i in graph[v]:
+        if visited[i] == 0:
+            dfs(i)
 
 
 
-graph = [
-    [],
-    [2, 3, 8],
-    [1, 7],
-    [1, 4, 5],
-    [3, 5],
-    [3, 4],
-    [7],
-    [2, 6, 8],
-    [1, 7]
-]
 
-stack = [False] * 9
-dfs(graph, 1, stack)
+n = int(input())
+visited = [0 for i in range(n + 1)]
+dfs(n)
