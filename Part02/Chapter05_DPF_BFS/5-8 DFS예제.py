@@ -51,15 +51,15 @@ print(recursive_dfs(1))
 
 '''
 def dfs(v):
-    print(v, end= ' ')
-    visited[v] = 1
-    for i in graph[v]:
-        if visited[i] == 0:
-            dfs(i)
+   visited[v] = 1
+   print(v, end=' ')
 
+   for i in graph[v]:
+       if not visited[i]:
+           dfs(i)
 
 
 
 n = int(input())
-visited = [0 for i in range(n + 1)]
+visited = [0] * 10
 dfs(n)
